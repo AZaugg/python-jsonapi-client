@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # from api import JSONAPIClient
-from jsonapiobject import JSONAPIObject
-import resource
-import jsonapi
+# from .jsonapiobject import JSONAPIObject
+from .resource import Resource
+# from .jsonapiclient import JSONAPIClient
 
 
-class Collection(JSONAPIObject):
+class Collection(object):
     def __init__(self, url, api=None):
         collection_type = url.split('/')[-1]
         base_url = url.split(collection_type)[0]
@@ -14,7 +14,7 @@ class Collection(JSONAPIObject):
         self.type = collection_type
         self.url = url
         if not api:
-            api = jsonapi.JSONAPIClient(url=base_url)
+            api = JSONAPIClient(url=base_url)
         self.api = api
         self.resources = []
 
@@ -22,7 +22,7 @@ class Collection(JSONAPIObject):
         json_response = self.api.get(self.url)
         for resource_json in json_response.get('data', {}):
             resource_id = resource_json.get('id')
-            r = resource.Resource(self.type, resource_id, resource_json, self)
+            r = Resource(self.type, resource_id, resource_json, self)
             self.resources.append(r)
         return self.resources
 
@@ -31,7 +31,7 @@ class Collection(JSONAPIObject):
         resource_json = self.api.get(url).get('data', {})
         resource_id = resource_json.get('id')
 
-        return resource.Resource(
+        return Resource(
             resource_type=self.type, resource_id=resource_id,
             resource_json=resource_json, collection=self)
 
