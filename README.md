@@ -22,36 +22,45 @@ class Bee(db.Model):
 ```
 
 
-Getting a Hive object with the id of 1
+Getting all the Hives
 ```
 >>> api = API('http://localhost:5000/api/')
->>> api.hive.get(1)
-<Resource hive:1>
+>>> Hive = api.Collection('hive')
+>>> Hive.all()
+[<Hive:1>]
 ```
 
-Getting the url of the first Hive object
+Getting Hive with the ID of 1
 ```
->>> api.hive.get(1).url
+>>> Hive.get(1).url
 http://localhost:5000/api/hive/1
 ```
 
 Get all the attributes for a  Hive
 ```
->>> api.hive.get(1).attributes
+>>> Hive.get(1).attributes
 {u'location': u'backyard'}
 ```
 
 Get all the keys for a hive
 ```
->>> api.hive.get(1).keys()
+>>> Hive.get(1).keys()
 [u'location']
 ```
 
 Get all the Bees in a hive
 
 ```
-[bee for bee in api.hive.get(1).bees]
-[<Resource bee:1>, <Resource bee:2>]
+>>> api.hive.get(1).bees
+[<Bee:1>, <Bee:2>]
+```
+
+Create a new collection 'Bee'
+```
+>>> api = API('http://localhost:5000/api/')
+>>> Bee = Collection('http://localhost:5000/api/bee', api)
+>>> Bee.all()
+[<Bee:1>, <Bee2:>]
 ```
 
 Get a bee's name
@@ -59,5 +68,3 @@ Get a bee's name
 >>> api.bee.get(1).name
 u'adam'
 ```
-	
-
