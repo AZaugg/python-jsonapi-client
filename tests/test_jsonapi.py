@@ -6,7 +6,6 @@ from jsonapiclient import JSONAPIClient
 def get_wrapper(self, url):
     url = url.replace('/', '_')
     path = os.path.join(os.path.abspath(os.path.dirname(__file__)), url)
-    print path
     return json.loads(open(path).read())
 
 JSONAPIClient._get = get_wrapper
