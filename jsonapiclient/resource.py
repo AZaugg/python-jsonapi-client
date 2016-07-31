@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from jsonapiobject import JSONAPIObject
+from .jsonapiobject import JSONAPIObject
 
 
 class Resource(JSONAPIObject):
