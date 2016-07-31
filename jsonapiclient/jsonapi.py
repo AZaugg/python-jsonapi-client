@@ -2,8 +2,7 @@
 import logging
 import requests
 
-import collection
-# from collection import Collection
+import .collection
 
 default_headers = {'accept': 'application/vnd.api+json'}
 
