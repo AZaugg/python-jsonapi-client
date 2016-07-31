@@ -1,0 +1,61 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "name": "adam"
+      }, 
+      "id": "1", 
+      "links": {
+        "self": "http://localhost:5000/api/bee/1"
+      }, 
+      "relationships": {
+        "hive": {
+          "data": {
+            "id": "1", 
+            "type": "hive"
+          }, 
+          "links": {
+            "related": "/api/bee/1/hive", 
+            "self": "/api/bee/1/relationships/hive"
+          }
+        }
+      }, 
+      "type": "bee"
+    }, 
+    {
+      "attributes": {
+        "name": "steve"
+      }, 
+      "id": "2", 
+      "links": {
+        "self": "http://localhost:5000/api/bee/2"
+      }, 
+      "relationships": {
+        "hive": {
+          "data": {
+            "id": "1", 
+            "type": "hive"
+          }, 
+          "links": {
+            "related": "/api/bee/2/hive", 
+            "self": "/api/bee/2/relationships/hive"
+          }
+        }
+      }, 
+      "type": "bee"
+    }
+  ], 
+  "jsonapi": {
+    "version": "1.0"
+  }, 
+  "links": {
+    "first": "http://localhost:5000/api/bee?page[number]=1&page[size]=10", 
+    "last": "http://localhost:5000/api/bee?page[number]=1&page[size]=10", 
+    "next": "http://localhost:5000/api/bee?page[number]=2&page[size]=10", 
+    "prev": "http://localhost:5000/api/bee?page[number]=0&page[size]=10", 
+    "self": "/api/bee"
+  }, 
+  "meta": {
+    "total": 2
+  }
+}

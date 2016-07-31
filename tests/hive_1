@@ -1,0 +1,37 @@
+{
+  "data": {
+    "attributes": {
+      "location": "backyard"
+    }, 
+    "id": "1", 
+    "links": {
+      "self": "http://localhost:5000/api/hive/1"
+    }, 
+    "relationships": {
+      "bees": {
+        "data": [
+          {
+            "id": "1", 
+            "type": "bee"
+          }, 
+          {
+            "id": "2", 
+            "type": "bee"
+          }
+        ], 
+        "links": {
+          "related": "/api/hive/1/bees", 
+          "self": "/api/hive/1/relationships/bees"
+        }
+      }
+    }, 
+    "type": "hive"
+  }, 
+  "jsonapi": {
+    "version": "1.0"
+  }, 
+  "links": {
+    "self": "/api/hive"
+  }, 
+  "meta": {}
+}

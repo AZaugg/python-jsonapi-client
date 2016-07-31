@@ -1,0 +1,45 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "location": "backyard"
+      }, 
+      "id": "1", 
+      "links": {
+        "self": "http://localhost:5000/api/hive/1"
+      }, 
+      "relationships": {
+        "bees": {
+          "data": [
+            {
+              "id": "1", 
+              "type": "bee"
+            }, 
+            {
+              "id": "2", 
+              "type": "bee"
+            }
+          ], 
+          "links": {
+            "related": "/api/hive/1/bees", 
+            "self": "/api/hive/1/relationships/bees"
+          }
+        }
+      }, 
+      "type": "hive"
+    }
+  ], 
+  "jsonapi": {
+    "version": "1.0"
+  }, 
+  "links": {
+    "first": "http://localhost:5000/api/hive?page[number]=1&page[size]=10", 
+    "last": "http://localhost:5000/api/hive?page[number]=1&page[size]=10", 
+    "next": "http://localhost:5000/api/hive?page[number]=2&page[size]=10", 
+    "prev": "http://localhost:5000/api/hive?page[number]=0&page[size]=10", 
+    "self": "/api/hive"
+  }, 
+  "meta": {
+    "total": 1
+  }
+}

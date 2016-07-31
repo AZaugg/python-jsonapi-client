@@ -1,0 +1,31 @@
+{
+  "data": {
+    "attributes": {
+      "name": "adam"
+    }, 
+    "id": "1", 
+    "links": {
+      "self": "http://localhost:5000/api/bee/1"
+    }, 
+    "relationships": {
+      "hive": {
+        "data": {
+          "id": "1", 
+          "type": "hive"
+        }, 
+        "links": {
+          "related": "/api/bee/1/hive", 
+          "self": "/api/bee/1/relationships/hive"
+        }
+      }
+    }, 
+    "type": "bee"
+  }, 
+  "jsonapi": {
+    "version": "1.0"
+  }, 
+  "links": {
+    "self": "/api/bee"
+  }, 
+  "meta": {}
+}

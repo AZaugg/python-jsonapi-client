@@ -24,7 +24,7 @@ class Bee(db.Model):
 
 Getting all the Hives
 ```
->>> api = API('http://localhost:5000/api/')
+>>> api = JSONAPIClient('http://localhost:5000/api/')
 >>> Hive = api.Collection('hive')
 >>> Hive.all()
 [<Hive:1>]
@@ -57,7 +57,7 @@ Get all the Bees in a hive
 
 Create a new collection 'Bee'
 ```
->>> api = API('http://localhost:5000/api/')
+>>> api = JSONAPIClient('http://localhost:5000/api/')
 >>> Bee = Collection('http://localhost:5000/api/bee', api)
 >>> Bee.all()
 [<Bee:1>, <Bee2:>]
