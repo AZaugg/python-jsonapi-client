@@ -2,7 +2,7 @@
 import logging
 import requests
 
-import .collection
+from .collection import Collection
 
 default_headers = {'accept': 'application/vnd.api+json'}
 
@@ -29,4 +29,4 @@ class JSONAPIClient(object):
 
     def Collection(self, collection_name):
         url = "{0}{1}".format(self.url, collection_name)
-        return collection.Collection(url, self)
+        return Collection(url, self)
