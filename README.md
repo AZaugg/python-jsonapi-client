@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/daniellawrence/python-jsonapi-client.svg?branch=master)](https://travis-ci.org/daniellawrence/python-jsonapi-client)
+
 jsonapi-client for python
 -------------------------------
 

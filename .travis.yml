@@ -9,5 +9,11 @@ python:
   - "3.5-dev"
   - "nightly"
 
-install: "pip install -r requirements.txt"
+install:
+  - "pip install -r requirements.txt"
+  - "pip install coveralls"
+
 script: PYTHONPATH=. py.test -v
+
+after_success:  
+  - coveralls 
