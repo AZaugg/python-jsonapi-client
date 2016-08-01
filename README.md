@@ -70,3 +70,8 @@ Get a bee's name
 >>> api.bee.get(1).name
 u'adam'
 ```
+
+TODO
+-----
+
+lots
