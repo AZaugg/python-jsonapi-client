@@ -8,13 +8,11 @@ from .resource import Resource
 class Collection(object):
     def __init__(self, url, api=None):
         collection_type = url.split('/')[-1]
-        base_url = url.split(collection_type)[0]
+        # base_url = url.split(collection_type)[0]
 
         self.name = collection_type
         self.type = collection_type
         self.url = url
-        if not api:
-            api = JSONAPIClient(url=base_url)
         self.api = api
         self.resources = []
 

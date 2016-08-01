@@ -1,12 +1,5 @@
-import os
-import json
 from jsonapiclient import JSONAPIClient
-
-
-def get_wrapper(self, url):
-    url = url.replace('/', '_')
-    path = os.path.join(os.path.abspath(os.path.dirname(__file__)), url)
-    return json.loads(open(path).read())
+from utils import get_wrapper
 
 JSONAPIClient._get = get_wrapper
 

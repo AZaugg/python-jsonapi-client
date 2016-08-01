@@ -29,4 +29,4 @@ class JSONAPIClient(object):
 
     def Collection(self, collection_name):
         url = "{0}{1}".format(self.url, collection_name)
-        return Collection(url, self)
+        return Collection(url, api=self)

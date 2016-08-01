@@ -7,6 +7,7 @@ default_headers = {'accept': 'application/vnd.api+json'}
 class JSONAPIObject(object):
 
     def short_url(self):
+        print self.api.url
         return self.url.replace(self.api.url, '')
 
     def keys(self):
@@ -16,7 +17,6 @@ class JSONAPIObject(object):
         if json_data == {} and self.json_data == {}:
             self_url = self.self_url()
             self.json_data = self.api.get(self_url)
-
         self.url = json_data.get('links', {}).get('self')
         return self.url
 
