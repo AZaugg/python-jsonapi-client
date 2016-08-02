@@ -7,7 +7,6 @@ default_headers = {'accept': 'application/vnd.api+json'}
 class JSONAPIObject(object):
 
     def short_url(self):
-        print self.api.url
         return self.url.replace(self.api.url, '')
 
     def keys(self):
