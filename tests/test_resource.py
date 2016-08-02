@@ -20,7 +20,7 @@ def test_resource_short_url():
 
 def test_resource_keys():
     hive = JSONAPIClient('http://localhost:5000/api/').Collection('hive').get(1)
-    assert hive.keys() == ['location']
+    assert list(hive.keys()) == ['location']
 
 
 def test_resource_self_url():
